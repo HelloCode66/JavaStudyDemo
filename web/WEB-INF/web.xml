@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <welcome-file-list>
+        <welcome-file>/hello.html</welcome-file>
+    </welcome-file-list>
+
+<!--    Servlet声明-->
+    <servlet>
+        <servlet-name>First</servlet-name>
+        <servlet-class>study.servlet.Demo</servlet-class>
+    </servlet>
+
+<!--    映射-->
+    <servlet-mapping>
+        <servlet-name>First</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+
+<!--    第二种映射方式-->
+<!--    <servlet>-->
+<!--        <servlet-name>Demo2</servlet-name>-->
+<!--        <servlet-class>study.servlet.Demo2</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Demo2</servlet-name>-->
+<!--        <url-pattern>/Demo2/*</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    第三种映射方式-->
+    <servlet>
+        <servlet-name>Demo2</servlet-name>
+        <servlet-class>study.servlet.Demo2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo2</servlet-name>
+        <url-pattern>*.test</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ServletConfigDemo</servlet-name>
+        <servlet-class>study.servlet.ServletConfigDemo</servlet-class>
+
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>desc</param-name>
+            <param-value>This is ServletConfigDemo</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletConfigDemo</servlet-name>
+        <url-pattern>/ServletConfigDemo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Demo3</servlet-name>
+        <servlet-class>study.servlet.Demo3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Demo3</servlet-name>
+        <url-pattern>/demo3/*</url-pattern>
+    </servlet-mapping>
+
+<!--    ServletContext配置-->
+    <context-param>
+        <param-name>globaldesc</param-name>
+        <param-value>This is context Test!</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>ContextDemo</servlet-name>
+        <servlet-class>study.servlet.ServletContextDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContextDemo</servlet-name>
+        <url-pattern>/context</url-pattern>
+    </servlet-mapping>
+</web-app>
